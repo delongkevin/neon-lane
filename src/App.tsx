@@ -18,6 +18,8 @@ const SPEED_GROWTH = 6; // px/sec per minute ~0.1/sec
 const BASE_SPAWN = 1.0; // seconds between spawns initially
 const MIN_SPAWN = 0.35; // seconds minimum
 const SPAWN_DECAY = 0.04; // reduces spawn interval per 10 seconds (~0.004/sec)
+const OVERLAY_TITLE_FONT = "bold 28px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+const OVERLAY_SUBTITLE_FONT = "16px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
 
 function laneX(lane: number) {
   const laneWidth = CANVAS_W / LANES;
@@ -228,16 +230,16 @@ export default function App() {
       ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
       ctx.fillStyle = "#fff";
       ctx.textAlign = "center";
-      ctx.font = "bold 28px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.font = OVERLAY_TITLE_FONT;
       ctx.fillText("Game Over", CANVAS_W / 2, CANVAS_H / 2 - 20);
-      ctx.font = "16px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.font = OVERLAY_SUBTITLE_FONT;
       ctx.fillText("Tap to restart", CANVAS_W / 2, CANVAS_H / 2 + 12);
     } else if (!running) {
       ctx.fillStyle = "rgba(0,0,0,0.5)";
       ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
       ctx.fillStyle = "#fff";
       ctx.textAlign = "center";
-      ctx.font = "bold 28px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.font = OVERLAY_TITLE_FONT;
       ctx.fillText("Paused", CANVAS_W / 2, CANVAS_H / 2);
     }
   }
