@@ -38,7 +38,7 @@ npm run preview
 ## Deploy
 - Quick: Vercel/Netlify (drag-and-drop or CI)
 - GitHub Pages:
-  - Add "homepage" and a deploy script to package.json, or use an Action.
+  - Add `"homepage"` and a deploy script to package.json, or use an Action.
   - Then publish `dist/`.
 
 ## License
