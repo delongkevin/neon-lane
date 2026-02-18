@@ -3,3 +3,5 @@ dist
 *.log
 .idea
 .DS_Store
+src/**/*.js
+src/**/*.jsx
