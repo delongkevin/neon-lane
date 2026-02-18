@@ -221,6 +221,25 @@ export default function App() {
     ctx.fillText(`Score: ${score}`, 10, 28);
     ctx.textAlign = "right";
     ctx.fillText(`Best: ${best}`, CANVAS_W - 10, 28);
+
+    // Overlays after HUD
+    if (deadRef.current) {
+      ctx.fillStyle = "rgba(0,0,0,0.6)";
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      ctx.fillStyle = "#fff";
+      ctx.textAlign = "center";
+      ctx.font = "bold 28px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.fillText("Game Over", CANVAS_W / 2, CANVAS_H / 2 - 20);
+      ctx.font = "16px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.fillText("Tap to restart", CANVAS_W / 2, CANVAS_H / 2 + 12);
+    } else if (!running) {
+      ctx.fillStyle = "rgba(0,0,0,0.5)";
+      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+      ctx.fillStyle = "#fff";
+      ctx.textAlign = "center";
+      ctx.font = "bold 28px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+      ctx.fillText("Paused", CANVAS_W / 2, CANVAS_H / 2);
+    }
   }
 
   useEffect(() => {
