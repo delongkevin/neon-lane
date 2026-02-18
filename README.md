@@ -42,4 +42,4 @@ npm run preview
   - Then publish `dist/`.
 
 ## License
-MIT (change if needed)
+MIT (see LICENSE)
